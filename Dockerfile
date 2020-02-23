@@ -1,7 +1,7 @@
 FROM python:3.7
 
 # install smtp
-RUN apt-get update && apt-get install ssmtp -y
+RUN apt-get update && apt-get install msmtp -y
 RUN rm -rf /var/lib/apt/lists/*
 
 ARG APP_DIR="/app"
