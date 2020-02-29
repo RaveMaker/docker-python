@@ -8,6 +8,15 @@ docker-compose file includes:
 ## Setup:
 1. clone the repo
 2. create `.env` file from `.env.example`
+3. place you python app in `app` folder
+4. you can override 'CMD/ENTRYPOINT' using docker-compose.override.yml
+
+default values:
+
+```
+ENTRYPOINT ["main.py"]
+CMD ["python"]
+```
 
 ## Network settings:
 Container is connected to to a unique network named stack-name_frontend such as:
