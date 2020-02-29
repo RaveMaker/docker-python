@@ -1,5 +1,5 @@
 # Docker: Python
-Dockerfile for Python with mSMTP, includes Traefik support.
+Dockerfile for Python3, includes Traefik support.
 
 docker-compose file includes:
  - Python3
@@ -8,7 +8,6 @@ docker-compose file includes:
 ## Setup:
 1. clone the repo
 2. create `.env` file from `.env.example`
-3. create `msmtp/msmtprc` from `msmtp/msmtprc.example`
 
 ## Network settings:
 Container is connected to to a unique network named stack-name_frontend such as:
