@@ -10,6 +10,6 @@ RUN pip install -r requirements.txt
 
 COPY app .
 
-ENTRYPOINT ["main.py"]
+ENTRYPOINT ["app.py"]
 
 CMD ["python"]
