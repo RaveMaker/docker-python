@@ -5,13 +5,19 @@ docker-compose file includes:
  - Python3
  - Traefik support
 
-## Setup
+## Setup:
 1. clone the repo
-2. edit `.env` file
-3. create `msmtp/msmtprc` from provided `msmtprc.example`
+2. create `.env` file from `.env.example`
+3. create `msmtp/msmtprc` from `msmtp/msmtprc.example`
+
+## Network settings:
+Container is connected to to a unique network named stack-name_frontend such as:
+
+- docker-python_frontend
 
 after running docker-compose up you need to connect your reverse proxy to your new frontend network:
  you can do that manually using:
+
  ```
  docker network connect docker-python_frontend PROXY_CONTAINER_NAME
  ```

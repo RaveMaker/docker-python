@@ -1,1 +1,3 @@
+app/
 msmtp/msmtprc
+.env
