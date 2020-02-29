@@ -8,14 +8,26 @@ docker-compose file includes:
 ## Setup:
 1. clone the repo
 2. create `.env` file from `.env.example`
-3. place you python app in `app` folder
-4. you can override 'CMD/ENTRYPOINT' using docker-compose.override.yml
+3. place your python app in 'app' folder
+4. app should have a 'requirements.txt' file at 'app/requirements.txt'
 
-default values:
+## WSGI Server
+In prod we will use a server instead of running the app with python. 
+For example I will use 'Gunicorn' server but you can use whatever you want.
+
+1. make sure you have 'gunicorn==...' in your 'requirements.txt' file
+2. override 'CMD/ENTRYPOINT' using `docker-compose.override.yml`:
 
 ```
-ENTRYPOINT ["main.py"]
-CMD ["python"]
+version: "3.7"
+
+services:
+  python:
+    command: ["gunicorn"]
+    entrypoint:
+      - -b
+      - 0.0.0.0:8000
+      - app
 ```
 
 ## Network settings:
