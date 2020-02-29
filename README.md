@@ -26,7 +26,7 @@ services:
     command: ["gunicorn"]
     entrypoint:
       - -b
-      - 0.0.0.0:8000
+      - 0.0.0.0:80
       - app
 ```
 
