@@ -23,11 +23,8 @@ version: "3.7"
 
 services:
   python:
-    command: ["gunicorn"]
-    entrypoint:
-      - -b
-      - 0.0.0.0:80
-      - app
+    command: ["gunicorn", "b", "0.0.0.0:80"]
+    entrypoint: ["/app/main.py"]
 ```
 
 ## Network settings:
