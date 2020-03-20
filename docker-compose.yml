@@ -3,6 +3,7 @@ version: '3.7'
 services:
   python:
     build: .
+    image: ${podName}/python
     restart: unless-stopped
     labels:
       - "traefik.backend=${podName}-python"
