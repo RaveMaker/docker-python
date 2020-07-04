@@ -3,13 +3,21 @@ Dockerfile for Python3, includes Traefik support.
 
 docker-compose file includes:
  - Python3
- - Traefik support
+ - Docker Swarm support
+ - Traefik v2 support
 
 ## Setup:
 1. clone the repo
 2. create `.env` file from `.env.example`
 3. place your python app in 'app' folder
 4. app should have a 'requirements.txt' file at 'app/requirements.txt'
+5. copy one of the docker-compose (dev/traefik) templates to `docker-compose.yml`
+
+- to create a docker-compose.prod.yml file for docker swarm run:
+
+```
+docker-compose config > docker-compose.prod.yml
+``` 
 
 ## WSGI Server
 In prod we will use a server instead of running the app with python. 
