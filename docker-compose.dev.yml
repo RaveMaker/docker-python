@@ -6,7 +6,7 @@ services:
     image: ${podName}/python
     restart: unless-stopped
     ports:
-    - 80:80
+    - 8000:8000
     networks:
       - frontend
     # Deploy block for docker swarm mode only - ignored by docker-compose
