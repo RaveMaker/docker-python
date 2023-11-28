@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.9
 
 ARG APP_DIR="/app"
 
@@ -10,6 +10,4 @@ RUN pip install -r requirements.txt
 
 COPY app .
 
-ENTRYPOINT ["/app/app.py"]
-
-CMD ["python"]
+CMD ["python app.py"]
