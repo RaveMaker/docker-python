@@ -9,7 +9,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.${podName}.rule=Host(`${hostRule}`)
       - traefik.http.routers.${podName}.entrypoints=websecure
-      - traefik.http.services.${podName}.loadbalancer.server.port=80
+      - traefik.http.services.${podName}.loadbalancer.server.port=8000
       - traefik.docker.network=${podName}_frontend
     networks:
       - frontend
@@ -23,7 +23,7 @@ services:
         - traefik.enable=true
         - traefik.http.routers.${podName}.rule=Host(`${hostRule}`)
         - traefik.http.routers.${podName}.entrypoints=websecure
-        - traefik.http.services.${podName}.loadbalancer.server.port=80
+        - traefik.http.services.${podName}.loadbalancer.server.port=8000
         - traefik.docker.network=${podName}_frontend
 
 networks:
