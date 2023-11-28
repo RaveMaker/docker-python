@@ -24,15 +24,14 @@ In prod we will use a server instead of running the app with python.
 For example I will use 'Gunicorn' server but you can use whatever you want.
 
 1. make sure you have 'gunicorn==...' in your 'requirements.txt' file
-2. override 'CMD/ENTRYPOINT' using `docker-compose.override.yml`:
+2. override 'CMD' using `docker-compose.override.yml`:
 
 ```
 version: "3.7"
 
 services:
   python:
-    command: ["gunicorn", "b", "0.0.0.0:80"]
-    entrypoint: ["/app/main.py"]
+    command: ["gunicorn","-b","0.0.0.0:8000","app:app"]
 ```
 
 ## Network settings:
